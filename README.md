@@ -1,4 +1,4 @@
-# GetOnwardTicket Clone
+# Get-Onward-Ticket 
 
 A pixel-faithful clone of [getonwardticket.com](https://getonwardticket.com/) — a quick and verifiable flight reservation service.
 
