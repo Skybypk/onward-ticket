@@ -17,44 +17,74 @@
 
     .blog-page { max-width: 1100px; margin: 0 auto; padding: 70px 40px; }
 
-    /* Featured post */
+    /* Featured */
     .blog-featured {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
+      gap: 0;
       background: #f8f9fc;
       border-radius: 20px;
       overflow: hidden;
       margin-bottom: 60px;
+      cursor: pointer;
+      transition: box-shadow 0.2s;
     }
+    .blog-featured:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
     .featured-img {
-      height: 320px;
-      background: #e3eaff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 80px;
+      height: 360px;
+      overflow: hidden;
     }
-    .featured-body { padding: 40px 40px 40px 0; }
+    .featured-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+    .blog-featured:hover .featured-img img { transform: scale(1.04); }
+    .featured-body { padding: 44px 40px; display: flex; flex-direction: column; justify-content: center; }
     .featured-tag {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #3a6fd8;
-      margin-bottom: 12px;
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: #3a6fd8; margin-bottom: 14px;
     }
-    .featured-body h2 { font-size: 1.8rem; font-weight: 800; line-height: 1.3; margin-bottom: 16px; }
-    .featured-body p { font-size: 15px; color: #555; line-height: 1.75; margin-bottom: 24px; }
-    .featured-meta { font-size: 13px; color: #aaa; margin-bottom: 24px; }
+    .featured-body h2 { font-size: 1.7rem; font-weight: 800; line-height: 1.3; margin-bottom: 14px; }
+    .featured-body p { font-size: 15px; color: #555; line-height: 1.75; margin-bottom: 20px; }
+    .featured-meta { font-size: 13px; color: #aaa; margin-bottom: 22px; }
 
-    /* Article modal overlay */
+    /* Grid */
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .blog-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid #eee;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .blog-card-img {
+      height: 200px;
+      overflow: hidden;
+    }
+    .blog-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s;
+    }
+    .blog-card:hover .blog-card-img img { transform: scale(1.05); }
+    .blog-card-body { padding: 22px; }
+    .blog-tag { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #3a6fd8; margin-bottom: 8px; }
+    .blog-card-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+    .blog-card-body p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 14px; }
+    .blog-meta { font-size: 13px; color: #aaa; }
+    .read-more { font-size: 13px; font-weight: 600; color: #3a6fd8; margin-top: 10px; display: inline-block; }
+
+    /* Modal */
     .overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.55);
+      background: rgba(0,0,0,0.6);
       z-index: 999;
       align-items: flex-start;
       justify-content: center;
@@ -65,76 +95,48 @@
     .modal {
       background: #fff;
       border-radius: 20px;
-      max-width: 780px;
+      max-width: 800px;
       width: 100%;
-      padding: 50px 50px 60px;
+      overflow: hidden;
       position: relative;
       margin: auto;
     }
+    .modal-hero-img {
+      width: 100%; height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+    .modal-body-wrap { padding: 44px 50px 54px; }
     .modal-close {
       position: absolute;
-      top: 20px; right: 24px;
+      top: 16px; right: 20px;
       font-size: 26px;
       cursor: pointer;
-      color: #aaa;
+      color: #fff;
       border: none;
-      background: none;
+      background: rgba(0,0,0,0.35);
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
       line-height: 1;
+      z-index: 10;
     }
-    .modal-close:hover { color: #333; }
-    .modal-tag {
-      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; color: #3a6fd8; margin-bottom: 12px;
-    }
-    .modal h2 { font-size: 1.9rem; font-weight: 800; line-height: 1.3; margin-bottom: 10px; }
-    .modal-meta { font-size: 13px; color: #aaa; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid #eee; }
-    .modal-body p { font-size: 16px; color: #444; line-height: 1.85; margin-bottom: 20px; }
-    .modal-body h3 { font-size: 18px; font-weight: 700; margin: 30px 0 12px; color: #1a1a2e; }
-    .modal-body ul { padding-left: 20px; margin-bottom: 20px; }
-    .modal-body ul li { font-size: 16px; color: #444; line-height: 1.75; margin-bottom: 8px; }
-    .modal-cta {
-      margin-top: 36px;
-      padding: 28px 32px;
-      background: #f8f9fc;
-      border-radius: 14px;
-      text-align: center;
-    }
+    .modal-close:hover { background: rgba(0,0,0,0.6); }
+    .modal-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #3a6fd8; margin-bottom: 10px; }
+    .modal-body-wrap h2 { font-size: 1.8rem; font-weight: 800; line-height: 1.3; margin-bottom: 8px; }
+    .modal-meta { font-size: 13px; color: #aaa; margin-bottom: 26px; padding-bottom: 22px; border-bottom: 1px solid #eee; }
+    .modal-content p { font-size: 16px; color: #444; line-height: 1.85; margin-bottom: 20px; }
+    .modal-content h3 { font-size: 18px; font-weight: 700; margin: 28px 0 10px; color: #1a1a2e; }
+    .modal-content ul { padding-left: 20px; margin-bottom: 20px; }
+    .modal-content ul li { font-size: 16px; color: #444; line-height: 1.75; margin-bottom: 8px; }
+    .modal-cta { margin-top: 34px; padding: 26px 28px; background: #f8f9fc; border-radius: 14px; text-align: center; }
     .modal-cta p { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 14px; }
-
-    /* Grid posts */
-    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .blog-card {
-      background: #f8f9fc;
-      border-radius: 16px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
-    .blog-card-img {
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 48px;
-    }
-    .c1 { background: #e3f5e8; }
-    .c2 { background: #fff3e3; }
-    .c3 { background: #f0e8ff; }
-    .c4 { background: #ffe8e8; }
-    .c5 { background: #e3f7f5; }
-    .blog-card-body { padding: 22px; }
-    .blog-tag { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #3a6fd8; margin-bottom: 8px; }
-    .blog-card-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
-    .blog-card-body p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 14px; }
-    .blog-meta { font-size: 13px; color: #aaa; }
-    .read-more { font-size: 13px; font-weight: 600; color: #3a6fd8; margin-top: 10px; display: inline-block; }
 
     .nav-links .active { font-weight: 700; color: #1a1a2e !important; }
 
     @media (max-width: 900px) {
       .blog-featured { grid-template-columns: 1fr; }
-      .featured-img { height: 200px; }
+      .featured-img { height: 220px; }
       .featured-body { padding: 28px; }
       .blog-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -142,7 +144,8 @@
       .blog-grid { grid-template-columns: 1fr; }
       .page-hero h1 { font-size: 2rem; }
       .blog-page { padding: 40px 20px; }
-      .modal { padding: 32px 24px 40px; }
+      .modal-body-wrap { padding: 28px 22px 36px; }
+      .modal-body-wrap h2 { font-size: 1.4rem; }
     }
   </style>
 </head>
@@ -176,30 +179,37 @@
 
     <!-- FEATURED -->
     <div class="blog-featured" onclick="openModal('post1')">
-      <div class="featured-img">✈️</div>
+      <div class="featured-img">
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80&auto=format&fit=crop" alt="Airplane flying" />
+      </div>
       <div class="featured-body">
         <div class="featured-tag">Featured · Travel Tips</div>
         <h2>What is an Onward Ticket and Why Do You Need One?</h2>
-        <p>Many countries require proof of onward travel before letting you board your flight. Airlines and immigration officers can deny entry if you can't show where you're going next — even if you plan to stay long-term. Here's everything you need to know before your next trip.</p>
+        <p>Many countries require proof of onward travel before letting you board. Airlines and immigration officers can deny entry if you can't show where you're going next — even if your plans are completely legitimate.</p>
         <div class="featured-meta">July 5, 2026 · 5 min read</div>
-        <span class="btn-dark" style="cursor:pointer">Read Article →</span>
+        <span class="btn-dark" style="cursor:pointer; align-self:flex-start">Read Article →</span>
       </div>
     </div>
 
     <!-- GRID -->
     <div class="blog-grid">
       <div class="blog-card" onclick="openModal('post2')">
-        <div class="blog-card-img c1">🌍</div>
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=600&q=80&auto=format&fit=crop" alt="World travel" />
+        </div>
         <div class="blog-card-body">
           <div class="blog-tag">Visa Guide</div>
           <h3>Top 10 Countries That Require Proof of Onward Travel</h3>
-          <p>From Thailand to Colombia — a complete list of countries that check for outbound flights at the border.</p>
+          <p>From Thailand to Colombia — a full list of countries that check for outbound flights at the border.</p>
           <div class="blog-meta">June 20, 2026 · 7 min read</div>
           <span class="read-more">Read more →</span>
         </div>
       </div>
+
       <div class="blog-card" onclick="openModal('post3')">
-        <div class="blog-card-img c2">🎒</div>
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=600&q=80&auto=format&fit=crop" alt="Backpacker travel" />
+        </div>
         <div class="blog-card-body">
           <div class="blog-tag">Flexible Travel</div>
           <h3>How to Travel the World Without a Return Ticket</h3>
@@ -208,8 +218,11 @@
           <span class="read-more">Read more →</span>
         </div>
       </div>
+
       <div class="blog-card" onclick="openModal('post4')">
-        <div class="blog-card-img c3">🛂</div>
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=600&q=80&auto=format&fit=crop" alt="Airport immigration" />
+        </div>
         <div class="blog-card-body">
           <div class="blog-tag">Border Control</div>
           <h3>What Happens If You Don't Have an Onward Ticket at Check-In?</h3>
@@ -218,8 +231,11 @@
           <span class="read-more">Read more →</span>
         </div>
       </div>
+
       <div class="blog-card" onclick="openModal('post5')">
-        <div class="blog-card-img c4">💡</div>
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80&auto=format&fit=crop" alt="Boarding pass ticket" />
+        </div>
         <div class="blog-card-body">
           <div class="blog-tag">How It Works</div>
           <h3>What is a PNR and How Can You Verify It?</h3>
@@ -228,8 +244,11 @@
           <span class="read-more">Read more →</span>
         </div>
       </div>
+
       <div class="blog-card" onclick="openModal('post6')">
-        <div class="blog-card-img c5">🗺️</div>
+        <div class="blog-card-img">
+          <img src="https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80&auto=format&fit=crop" alt="Southeast Asia temple" />
+        </div>
         <div class="blog-card-body">
           <div class="blog-tag">Destinations</div>
           <h3>Southeast Asia on a One-Way Ticket: A Traveler's Guide</h3>
@@ -241,7 +260,7 @@
     </div>
   </div>
 
-  <!-- ===== MODALS ===== -->
+  <!-- MODAL -->
   <div class="overlay" id="overlay" onclick="closeModal(event)">
     <div class="modal" id="modalBox">
       <button class="modal-close" onclick="closeAll()">✕</button>
@@ -293,6 +312,8 @@
         tag: "Travel Tips",
         title: "What is an Onward Ticket and Why Do You Need One?",
         meta: "July 5, 2026 · 5 min read",
+        img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&q=80&auto=format&fit=crop",
+        imgAlt: "Airplane flying",
         body: `
           <p>An onward ticket is proof that you have a confirmed flight leaving a country after you arrive. Airlines and immigration officers use it to verify that you don't intend to overstay your visa or remain in the country illegally.</p>
           <h3>Why Do Airlines Ask for It?</h3>
@@ -318,12 +339,14 @@
         tag: "Visa Guide",
         title: "Top 10 Countries That Require Proof of Onward Travel",
         meta: "June 20, 2026 · 7 min read",
+        img: "https://images.unsplash.com/photo-1500835556837-99ac94a94552?w=900&q=80&auto=format&fit=crop",
+        imgAlt: "World travel",
         body: `
-          <p>You've booked your flight, packed your bags, and you're ready to go — but did you check whether your destination requires an onward ticket? Here are the top 10 countries that enforce this rule and what you need to know.</p>
+          <p>You've booked your flight, packed your bags, and you're ready to go — but did you check whether your destination requires an onward ticket? Here are the top 10 countries that enforce this rule.</p>
           <h3>1. Thailand</h3>
           <p>Thailand is one of the most strictly enforced. Border agents and check-in staff regularly ask for onward travel proof, especially at Bangkok's Suvarnabhumi Airport. Without it, you may be denied boarding.</p>
           <h3>2. Indonesia (Bali)</h3>
-          <p>Bali sees millions of visitors on tourist visas. Immigration officers frequently check for return or onward tickets, particularly for travelers arriving from budget airlines.</p>
+          <p>Bali sees millions of visitors on tourist visas. Immigration officers frequently check for return or onward tickets, particularly for travelers arriving on budget airlines.</p>
           <h3>3. Philippines</h3>
           <p>The Philippines Bureau of Immigration officially requires all foreign visitors to show proof of onward travel. Airlines serving Manila are known to enforce this at check-in.</p>
           <h3>4. Colombia</h3>
@@ -333,7 +356,7 @@
           <h3>6. Peru</h3>
           <p>Peru's immigration frequently checks for proof of departure, particularly at Lima's Jorge Chávez Airport.</p>
           <h3>7. New Zealand</h3>
-          <p>New Zealand immigration requires travelers to show they have the means and intention to leave the country before their visa expires.</p>
+          <p>New Zealand immigration requires travelers to show they have the means and intention to leave before their visa expires.</p>
           <h3>8. United Kingdom</h3>
           <p>UK border agents can and do ask for onward travel proof for visitors from certain countries, particularly if the purpose of visit seems unclear.</p>
           <h3>9. USA</h3>
@@ -350,12 +373,14 @@
         tag: "Flexible Travel",
         title: "How to Travel the World Without a Return Ticket",
         meta: "June 8, 2026 · 6 min read",
+        img: "https://images.unsplash.com/photo-1501555088652-021faa106b9b?w=900&q=80&auto=format&fit=crop",
+        imgAlt: "Backpacker travel",
         body: `
           <p>More people than ever are choosing to travel without a fixed return date. Whether you're a digital nomad, a sabbatical traveler, or just someone who hates being locked into a schedule — here's how to do it smartly.</p>
           <h3>The Problem With One-Way Tickets</h3>
           <p>One-way tickets are a red flag at many borders. Airlines and immigration officers interpret them as a sign that you might overstay your visa. Even if your intentions are completely legitimate, you could be questioned, delayed, or denied boarding.</p>
           <h3>The Smart Solution: A Reservation Hold</h3>
-          <p>Instead of buying an expensive return ticket you may never use, you can get a verifiable flight reservation — a real booking with a PNR in your name — that satisfies any immigration check. Services like GetOnwardTicket provide this for as little as $14, and the reservation is fully verifiable on the airline's website.</p>
+          <p>Instead of buying an expensive return ticket you may never use, get a verifiable flight reservation — a real booking with a PNR in your name — that satisfies any immigration check. Services like GetOnwardTicket provide this for as little as $14, and the reservation is fully verifiable on the airline's website.</p>
           <h3>Tips for Long-Term Travelers</h3>
           <ul>
             <li>Always have a flexible onward reservation before each border crossing</li>
@@ -364,8 +389,8 @@
             <li>Research visa rules for each country at least 2 weeks before arriving</li>
             <li>Have a backup plan — know the nearest embassy in each country you visit</li>
           </ul>
-          <h3>Countries That Are Especially Flexible-Traveler Friendly</h3>
-          <p>Georgia, Mexico, Portugal, and Georgia offer long visa-free or visa-on-arrival stays with minimal documentation requirements, making them popular bases for digital nomads.</p>
+          <h3>Best Countries for Flexible Travelers</h3>
+          <p>Georgia, Mexico, Portugal, and Colombia offer long visa-free or visa-on-arrival stays with minimal documentation requirements, making them popular bases for digital nomads.</p>
           <div class="modal-cta">
             <p>Keep your travel flexible — get a verifiable onward reservation whenever you need one.</p>
             <a href="index.html#book" class="btn-dark">Book your reservation from $14 →</a>
@@ -376,14 +401,16 @@
         tag: "Border Control",
         title: "What Happens If You Don't Have an Onward Ticket at Check-In?",
         meta: "May 25, 2026 · 4 min read",
+        img: "https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=900&q=80&auto=format&fit=crop",
+        imgAlt: "Airport terminal",
         body: `
           <p>It happens more often than you'd think. A traveler arrives at the airport, confident and excited — and gets stopped at check-in because they can't show proof of onward travel. Here's what typically happens next.</p>
           <h3>Scenario 1: Denied Boarding</h3>
           <p>This is the most common outcome. The airline agent informs you that you cannot board without an onward ticket. You either miss your flight or scramble to buy an expensive last-minute ticket on the spot — often paying 3–10x the normal price.</p>
           <h3>Scenario 2: Detained at Immigration</h3>
           <p>Some travelers make it through check-in only to be held at immigration on arrival. This can result in hours of waiting, questioning, and in some cases — being sent back on the next available flight, at your own expense.</p>
-          <h3>Scenario 3: Voluntary Upgrade</h3>
-          <p>Some airlines will offer to sell you an onward ticket at the gate — but this is rare, expensive, and entirely at the airline's discretion.</p>
+          <h3>Scenario 3: Voluntary Purchase at Gate</h3>
+          <p>Some airlines will offer to sell you an onward ticket at the gate — but this is rare, extremely expensive, and entirely at the airline's discretion.</p>
           <h3>A Real Story</h3>
           <p>"I was in Cartagena, Colombia checking in for my flight to Mexico. I didn't have proof of onward travel from Mexico and the agent flagged me. I found GetOnwardTicket on my phone, booked a reservation, and 10 minutes later I had a PDF in my inbox. I made my flight." — Alex S., Travel Blogger</p>
           <h3>How to Avoid This Entirely</h3>
@@ -398,6 +425,8 @@
         tag: "How It Works",
         title: "What is a PNR and How Can You Verify It?",
         meta: "May 10, 2026 · 3 min read",
+        img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80&auto=format&fit=crop",
+        imgAlt: "Boarding pass",
         body: `
           <p>If you've ever booked a flight, you've received a PNR — probably without knowing what it actually means or how powerful it is as a verification tool.</p>
           <h3>What PNR Stands For</h3>
@@ -424,6 +453,8 @@
         tag: "Destinations",
         title: "Southeast Asia on a One-Way Ticket: A Traveler's Guide",
         meta: "April 18, 2026 · 8 min read",
+        img: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=900&q=80&auto=format&fit=crop",
+        imgAlt: "Southeast Asia",
         body: `
           <p>Southeast Asia is one of the most popular regions for long-term, flexible travel. The food is incredible, the cost of living is low, and the visa policies are (mostly) generous. But traveling the region on a one-way ticket requires some preparation.</p>
           <h3>Thailand: The Hub</h3>
@@ -431,7 +462,7 @@
           <h3>Vietnam: Easy Visa, Tight Enforcement</h3>
           <p>Vietnam's e-visa system makes entry straightforward, but airlines flying into Hanoi and Ho Chi Minh City are strict about onward travel proof. Budget carriers like AirAsia and VietJet enforce this aggressively at check-in.</p>
           <h3>Indonesia (Bali): The Dream Destination</h3>
-          <p>Bali's popularity means immigration is well-practiced at spotting potential overstays. A verifiable onward reservation is strongly recommended, especially if you're arriving from Australia or Singapore.</p>
+          <p>Bali's popularity means immigration is well-practiced at spotting potential overstays. A verifiable onward reservation is strongly recommended, especially if arriving from Australia or Singapore.</p>
           <h3>Philippines: Legally Required</h3>
           <p>The Philippines Bureau of Immigration officially mandates onward travel proof. No exceptions. If you don't have one, you may be denied boarding before you even land.</p>
           <h3>Cambodia & Laos: More Relaxed</h3>
@@ -450,10 +481,13 @@
       const post = posts[id];
       if (!post) return;
       document.getElementById('modalContent').innerHTML = `
-        <div class="modal-tag">${post.tag}</div>
-        <h2>${post.title}</h2>
-        <div class="modal-meta">${post.meta}</div>
-        <div class="modal-body">${post.body}</div>
+        <img class="modal-hero-img" src="${post.img}" alt="${post.imgAlt}" />
+        <div class="modal-body-wrap">
+          <div class="modal-tag">${post.tag}</div>
+          <h2>${post.title}</h2>
+          <div class="modal-meta">${post.meta}</div>
+          <div class="modal-content">${post.body}</div>
+        </div>
       `;
       document.getElementById('overlay').classList.add('open');
       document.body.style.overflow = 'hidden';
