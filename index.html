@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GetOnwardTicket – Quick & Verifiable Flight Reservations</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.37A16 16 0 0015.63 17.1l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        GetOnwardTicket
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Get Help</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+      <a href="#booking" class="btn-dark">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Quick and <span class="highlight">verifiable</span> flight reservation within minutes</h1>
+      <p>Valid PNR with your name. Great for trip planning and flexible travel.</p>
+      <a href="#booking" class="btn-dark">Book your reservation from $14</a>
+      <p class="secure-note">🔒 Risk-free and secure booking</p>
+      <p class="disclaimer">No guarantees from third parties. Use only for legitimate travel plans. <a href="#">Terms</a></p>
+    </div>
+    <div class="hero-right">
+      <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" class="hero-svg">
+        <!-- Airplane -->
+        <g transform="translate(280,60) rotate(-20)">
+          <path d="M0,0 L80,0 Q110,0 110,20 Q110,40 80,40 L0,40 Z" fill="#e0e0e0"/>
+          <path d="M20,40 L60,80 L40,80 L10,40 Z" fill="#d0d0d0"/>
+          <path d="M80,20 L120,10 L120,30 L80,20 Z" fill="#d0d0d0"/>
+        </g>
+        <!-- Person 1 (standing) -->
+        <circle cx="220" cy="160" r="28" fill="#3d2b1f"/>
+        <rect x="190" y="188" width="60" height="90" rx="10" fill="#1a237e"/>
+        <rect x="175" y="200" width="25" height="60" rx="8" fill="#1a237e"/>
+        <rect x="255" y="200" width="25" height="60" rx="8" fill="#1a237e"/>
+        <rect x="195" y="278" width="25" height="50" rx="8" fill="#333"/>
+        <rect x="225" y="278" width="25" height="50" rx="8" fill="#333"/>
+        <!-- Person 2 (sitting) -->
+        <circle cx="360" cy="200" r="25" fill="#f5cba7"/>
+        <rect x="335" y="225" width="50" height="70" rx="10" fill="#1565c0"/>
+        <rect x="320" y="235" width="20" height="50" rx="8" fill="#1565c0"/>
+        <!-- Tickets -->
+        <rect x="370" y="230" width="50" height="30" rx="4" fill="#e53935" transform="rotate(-15,370,230)"/>
+        <rect x="378" y="238" width="50" height="30" rx="4" fill="#ef9a9a" transform="rotate(-5,378,238)"/>
+        <line x1="380" y1="243" x2="415" y2="243" stroke="white" stroke-width="2"/>
+        <line x1="380" y1="250" x2="410" y2="250" stroke="white" stroke-width="2"/>
+        <!-- Seat/cube -->
+        <rect x="330" y="295" width="80" height="40" rx="6" fill="#bdbdbd"/>
+        <rect x="320" y="290" width="10" height="50" rx="4" fill="#9e9e9e"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="booking">
+    <h2>Book your reservation in minutes</h2>
+    <p class="section-sub">We made the process as simple as possible.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Itinerary</h3>
+        <p>Define your itinerary. Choose your departure, destination and dates.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Checkout</h3>
+        <p>Review your itinerary and confirm your booking.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Receive your reservation</h3>
+        <p>Most reservations are delivered in minutes. We refund your money if you don't receive it in time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section class="booking-form-section" id="book">
+    <div class="booking-card">
+      <h2>Book Your Flight Reservation</h2>
+      <form class="booking-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="John" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Doe" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>From (City/Airport)</label>
+            <input type="text" placeholder="e.g. New York (JFK)" />
+          </div>
+          <div class="form-group">
+            <label>To (City/Airport)</label>
+            <input type="text" placeholder="e.g. London (LHR)" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Departure Date</label>
+            <input type="date" />
+          </div>
+          <div class="form-group">
+            <label>Return Date (optional)</label>
+            <input type="date" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="john@example.com" />
+        </div>
+        <div class="price-row">
+          <span>Total: <strong>$14.00</strong></span>
+          <button type="submit" class="btn-dark">Proceed to Checkout →</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <h2>Need a flight itinerary for your trip?</h2>
+      <p>Get a verifiable reservation in minutes. Use it for travel planning and when a travel provider requests an itinerary.</p>
+      <p>No promises, no gimmicks, just a real reservation with a PNR in your name.</p>
+      <div class="about-features">
+        <div class="feature">
+          <div class="feature-icon">✈️</div>
+          <h4>Perfect for flexible travelers</h4>
+          <p>Get a real, verifiable flight reservation with a PNR in your name, delivered in minutes and ready to share when needed.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🔒</div>
+          <h4>Secure & Verified</h4>
+          <p>Every reservation comes with a valid PNR you can verify directly on the airline's website.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">⚡</div>
+          <h4>Fast Delivery</h4>
+          <p>Most reservations arrive within minutes during working hours. Or your money back.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <h2>What our clients say</h2>
+    <div class="reviews">
+      <div class="review">
+        <p>"We use the service multiple times (3 to 4) a year, and we have never had a problem so far. The flight reservations are authentic, and I always check the booking using the app from the relative airline."</p>
+        <div class="reviewer">
+          <div class="avatar">LG</div>
+          <div>
+            <strong>Linda G.</strong>
+            <span>Freelance React Developer</span>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <p>"This is the second time I am using their service and wow it's fantastic. Was checking in Cartagena airport but needed an onward travel proof for Mexico. 10 min later I received my PDF and was able to board my flight."</p>
+        <div class="reviewer">
+          <div class="avatar">AS</div>
+          <div>
+            <strong>Alex S.</strong>
+            <span>Travel Blogger</span>
+          </div>
+        </div>
+      </div>
+      <div class="review">
+        <p>"Received the reservation within 30 minutes! And by coincidence it even was a flight reservation to our home country."</p>
+        <div class="reviewer">
+          <div class="avatar">LW</div>
+          <div>
+            <strong>Lin W.</strong>
+            <span>Graphic Designer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a href="#book" class="btn-dark">Book your reservation from $14</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How do you manage to provide verifiable reservation?</summary>
+        <p>We book flight reservations through our accredited partners. The flight reservation is associated to a PNR (Passenger Name Record) which is verifiable on airlines websites.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How long is my reservation valid?</summary>
+        <p>Reservations are typically valid for 3–7 days from booking, depending on the airline and route.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I pay for my reservation?</summary>
+        <p>We accept all major credit cards and PayPal. Payment is processed securely at checkout.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is your refund policy?</summary>
+        <p>If you don't receive your reservation within the stated timeframe, we offer a full refund. No questions asked.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does your booking include a ticket number?</summary>
+        <p>No — this is a flight reservation (hold), not a purchased ticket. It includes a valid PNR but not a ticket number.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Book your flight reservation now!</h2>
+    <p>Quick and verifiable flight reservation from $14</p>
+    <a href="#book" class="btn-light">Book your reservation from $14</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="logo" style="margin-bottom:12px">
+          ✈ GetOnwardTicket
+        </div>
+        <p>We are nomads who believe travel should be simple. We built GetOnwardTicket for ourselves and for travelers who want flexible trips with clear, verifiable booking details.</p>
+      </div>
+      <div class="footer-col">
+        <h4>COMPANY</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#">Affiliate Program</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>HELP</h4>
+        <ul>
+          <li><a href="#">Customer Support</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>SUBSCRIBE TO NEWSLETTER</h4>
+        <div class="newsletter">
+          <input type="email" placeholder="Email" />
+          <button class="btn-dark">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Copyright 2024, All Rights Reserved by GetOnwardTicket</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
