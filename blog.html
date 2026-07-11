@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog – GetOnwardTicket</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero {
+      background: #f8f9fc;
+      padding: 80px 40px 60px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+    .page-hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; }
+    .page-hero p { font-size: 18px; color: #666; max-width: 600px; margin: 0 auto; }
+    .blog-page { max-width: 1100px; margin: 0 auto; padding: 70px 40px; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .blog-card {
+      background: #f8f9fc;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+    }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
+    .blog-card-img {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 52px;
+    }
+    .blog-card-img.blue { background: #e3eaff; }
+    .blog-card-img.green { background: #e3f5e8; }
+    .blog-card-img.orange { background: #fff3e3; }
+    .blog-card-img.purple { background: #f0e8ff; }
+    .blog-card-img.red { background: #ffe8e8; }
+    .blog-card-img.teal { background: #e3f7f5; }
+    .blog-card-body { padding: 24px; }
+    .blog-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #3a6fd8;
+      margin-bottom: 10px;
+    }
+    .blog-card-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
+    .blog-card-body p { font-size: 14px; color: #666; line-height: 1.65; margin-bottom: 16px; }
+    .blog-meta { font-size: 13px; color: #aaa; }
+    .nav-links .active { font-weight: 700; color: #1a1a2e !important; }
+    @media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .page-hero h1 { font-size: 2rem; }
+      .blog-page { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.37A16 16 0 0015.63 17.1l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="index.html" style="color:inherit">GetOnwardTicket</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="help.html">Get Help</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+      </ul>
+      <a href="index.html#book" class="btn-dark">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>Travel Tips & Insights</h1>
+    <p>Guides, stories, and tips from a community of flexible travelers around the world.</p>
+  </div>
+
+  <!-- BLOG CONTENT -->
+  <div class="blog-page">
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-card-img blue">✈️</div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Travel Tips</div>
+          <h3>What is an Onward Ticket and Why Do You Need One?</h3>
+          <p>Many countries require proof of onward travel before letting you board. Here's everything you need to know.</p>
+          <div class="blog-meta">June 10, 2024 · 5 min read</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-img green">🌍</div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Visa Guide</div>
+          <h3>Top 10 Countries That Require Proof of Onward Travel</h3>
+          <p>From Thailand to Colombia — a complete list of countries that check for outbound flights at the border.</p>
+          <div class="blog-meta">May 28, 2024 · 7 min read</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-img orange">🎒</div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Flexible Travel</div>
+          <h3>How to Travel the World Without a Return Ticket</h3>
+          <p>A practical guide for digital nomads and long-term travelers who prefer to keep their plans open-ended.</p>
+          <div class="blog-meta">May 15, 2024 · 6 min read</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-img purple">🛂</div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Border Control</div>
+          <h3>What Happens If You Don't Have an Onward Ticket at Check-In?</h3>
+          <p>Real stories from travelers who were denied boarding — and how they could have avoided it.</p>
+          <div class="blog-meta">April 30, 2024 · 4 min read</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-img red">💡</div>
+        <div class="blog-card-body">
+          <div class="blog-tag">How It Works</div>
+          <h3>What is a PNR and How Can You Verify It?</h3>
+          <p>Understanding your Passenger Name Record — and why it's the key to a verifiable flight reservation.</p>
+          <div class="blog-meta">April 12, 2024 · 3 min read</div>
+        </div>
+      </div>
+      <div class="blog-card">
+        <div class="blog-card-img teal">🗺️</div>
+        <div class="blog-card-body">
+          <div class="blog-tag">Destinations</div>
+          <h3>Southeast Asia on a One-Way Ticket: A Traveler's Guide</h3>
+          <p>How to explore Thailand, Vietnam, Bali and more without committing to a fixed return date.</p>
+          <div class="blog-meta">March 20, 2024 · 8 min read</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="logo" style="margin-bottom:12px; color:#fff">✈ GetOnwardTicket</div>
+        <p>We are nomads who believe travel should be simple.</p>
+      </div>
+      <div class="footer-col">
+        <h4>COMPANY</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Affiliate Program</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>HELP</h4>
+        <ul>
+          <li><a href="help.html">Customer Support</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>SUBSCRIBE TO NEWSLETTER</h4>
+        <div class="newsletter">
+          <input type="email" placeholder="Email" />
+          <button class="btn-dark">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Copyright 2024, All Rights Reserved by GetOnwardTicket</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
