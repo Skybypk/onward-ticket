@@ -54,12 +54,19 @@ ul { list-style: none; }
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-weight: 800;
-  font-size: 20px;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 22px;
   color: #1a1a2e;
   white-space: nowrap;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+.logo span.logo-onward {
+  color: #1a1a2e;
+}
+.logo span.logo-ticket {
+  color: #3a6fd8;
 }
 .nav-links {
   display: flex;
