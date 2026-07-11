@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us – GetOnwardTicket</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero {
+      background: #f8f9fc;
+      padding: 80px 40px 60px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+    .page-hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; }
+    .page-hero p { font-size: 18px; color: #666; max-width: 600px; margin: 0 auto; }
+
+    .about-page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 70px 40px;
+    }
+    .about-page .mission-block {
+      background: #f8f9fc;
+      border-left: 4px solid #1a1a2e;
+      border-radius: 0 12px 12px 0;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+    .about-page .mission-block p {
+      font-size: 17px;
+      color: #444;
+      line-height: 1.8;
+      font-style: italic;
+    }
+    .about-page .story p {
+      font-size: 17px;
+      color: #444;
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+    .value-card {
+      background: #f8f9fc;
+      border-radius: 14px;
+      padding: 28px 22px;
+      text-align: center;
+    }
+    .value-card .icon { font-size: 36px; margin-bottom: 14px; }
+    .value-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .value-card p { font-size: 14px; color: #666; line-height: 1.6; }
+    .cta-small {
+      text-align: center;
+      margin-top: 60px;
+      padding: 50px 30px;
+      background: #1a1a2e;
+      border-radius: 20px;
+      color: #fff;
+    }
+    .cta-small h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
+    .cta-small p { color: #aab; margin-bottom: 28px; font-size: 16px; }
+    @media (max-width: 700px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .page-hero h1 { font-size: 2rem; }
+      .about-page { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.37A16 16 0 0015.63 17.1l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="index.html" style="color:inherit">GetOnwardTicket</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="help.html">Get Help</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <a href="index.html#book" class="btn-dark">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <h1>About Us</h1>
+    <p>We're travelers, just like you — and we built the tool we always wished existed.</p>
+  </div>
+
+  <!-- ABOUT CONTENT -->
+  <div class="about-page">
+    <div class="story">
+      <p>We built GetOnwardTicket because we were tired of being stuck at the boarding gate trying to book an emergency overpriced ticket. GetOnwardTicket is a platform that allows us and you to get a verifiable onward reservation from any country in the world. It's designed for travelers who need a quick, verifiable reservation while planning a trip. We are here to help you get the reservation details you need.</p>
+    </div>
+
+    <div class="mission-block">
+      <p>Our mission is to make travel as easy as possible for everyone. The reservation is a fully verifiable one with a valid PNR that respects the laws of the country of destination. We do not provide photoshopped reservations.</p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="icon">🌍</div>
+        <h4>Global Coverage</h4>
+        <p>Get a verifiable onward reservation from any country in the world, within minutes.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">✅</div>
+        <h4>100% Legitimate</h4>
+        <p>Real PNRs verified directly on airline websites. No photoshopped documents — ever.</p>
+      </div>
+      <div class="value-card">
+        <div class="icon">💙</div>
+        <h4>Built by Travelers</h4>
+        <p>We built this for ourselves first. We understand exactly what you need at the gate.</p>
+      </div>
+    </div>
+
+    <div class="cta-small">
+      <h2>Ready to travel with confidence?</h2>
+      <p>Get your verifiable flight reservation in minutes, starting from $14.</p>
+      <a href="index.html#book" class="btn-light">Book your reservation →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <div class="logo" style="margin-bottom:12px; color:#fff">✈ GetOnwardTicket</div>
+        <p>We are nomads who believe travel should be simple.</p>
+      </div>
+      <div class="footer-col">
+        <h4>COMPANY</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Affiliate Program</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>HELP</h4>
+        <ul>
+          <li><a href="help.html">Customer Support</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="#">Refund Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>SUBSCRIBE TO NEWSLETTER</h4>
+        <div class="newsletter">
+          <input type="email" placeholder="Email" />
+          <button class="btn-dark">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Copyright 2024, All Rights Reserved by GetOnwardTicket</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
