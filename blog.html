@@ -14,47 +14,135 @@
     }
     .page-hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; }
     .page-hero p { font-size: 18px; color: #666; max-width: 600px; margin: 0 auto; }
+
     .blog-page { max-width: 1100px; margin: 0 auto; padding: 70px 40px; }
+
+    /* Featured post */
+    .blog-featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      background: #f8f9fc;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 60px;
+    }
+    .featured-img {
+      height: 320px;
+      background: #e3eaff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+    }
+    .featured-body { padding: 40px 40px 40px 0; }
+    .featured-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #3a6fd8;
+      margin-bottom: 12px;
+    }
+    .featured-body h2 { font-size: 1.8rem; font-weight: 800; line-height: 1.3; margin-bottom: 16px; }
+    .featured-body p { font-size: 15px; color: #555; line-height: 1.75; margin-bottom: 24px; }
+    .featured-meta { font-size: 13px; color: #aaa; margin-bottom: 24px; }
+
+    /* Article modal overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 999;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 20px;
+      overflow-y: auto;
+    }
+    .overlay.open { display: flex; }
+    .modal {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 780px;
+      width: 100%;
+      padding: 50px 50px 60px;
+      position: relative;
+      margin: auto;
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 26px;
+      cursor: pointer;
+      color: #aaa;
+      border: none;
+      background: none;
+      line-height: 1;
+    }
+    .modal-close:hover { color: #333; }
+    .modal-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: #3a6fd8; margin-bottom: 12px;
+    }
+    .modal h2 { font-size: 1.9rem; font-weight: 800; line-height: 1.3; margin-bottom: 10px; }
+    .modal-meta { font-size: 13px; color: #aaa; margin-bottom: 28px; padding-bottom: 24px; border-bottom: 1px solid #eee; }
+    .modal-body p { font-size: 16px; color: #444; line-height: 1.85; margin-bottom: 20px; }
+    .modal-body h3 { font-size: 18px; font-weight: 700; margin: 30px 0 12px; color: #1a1a2e; }
+    .modal-body ul { padding-left: 20px; margin-bottom: 20px; }
+    .modal-body ul li { font-size: 16px; color: #444; line-height: 1.75; margin-bottom: 8px; }
+    .modal-cta {
+      margin-top: 36px;
+      padding: 28px 32px;
+      background: #f8f9fc;
+      border-radius: 14px;
+      text-align: center;
+    }
+    .modal-cta p { font-size: 16px; font-weight: 600; color: #333; margin-bottom: 14px; }
+
+    /* Grid posts */
     .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .blog-card {
       background: #f8f9fc;
       border-radius: 16px;
       overflow: hidden;
-      transition: transform 0.2s, box-shadow 0.2s;
       cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.1); }
     .blog-card-img {
-      height: 180px;
+      height: 150px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 52px;
+      font-size: 48px;
     }
-    .blog-card-img.blue { background: #e3eaff; }
-    .blog-card-img.green { background: #e3f5e8; }
-    .blog-card-img.orange { background: #fff3e3; }
-    .blog-card-img.purple { background: #f0e8ff; }
-    .blog-card-img.red { background: #ffe8e8; }
-    .blog-card-img.teal { background: #e3f7f5; }
-    .blog-card-body { padding: 24px; }
-    .blog-tag {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #3a6fd8;
-      margin-bottom: 10px;
-    }
-    .blog-card-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; line-height: 1.4; }
-    .blog-card-body p { font-size: 14px; color: #666; line-height: 1.65; margin-bottom: 16px; }
+    .c1 { background: #e3f5e8; }
+    .c2 { background: #fff3e3; }
+    .c3 { background: #f0e8ff; }
+    .c4 { background: #ffe8e8; }
+    .c5 { background: #e3f7f5; }
+    .blog-card-body { padding: 22px; }
+    .blog-tag { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #3a6fd8; margin-bottom: 8px; }
+    .blog-card-body h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
+    .blog-card-body p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 14px; }
     .blog-meta { font-size: 13px; color: #aaa; }
+    .read-more { font-size: 13px; font-weight: 600; color: #3a6fd8; margin-top: 10px; display: inline-block; }
+
     .nav-links .active { font-weight: 700; color: #1a1a2e !important; }
-    @media (max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+
+    @media (max-width: 900px) {
+      .blog-featured { grid-template-columns: 1fr; }
+      .featured-img { height: 200px; }
+      .featured-body { padding: 28px; }
+      .blog-grid { grid-template-columns: 1fr 1fr; }
+    }
     @media (max-width: 600px) {
       .blog-grid { grid-template-columns: 1fr; }
       .page-hero h1 { font-size: 2rem; }
       .blog-page { padding: 40px 20px; }
+      .modal { padding: 32px 24px 40px; }
     }
   </style>
 </head>
@@ -79,67 +167,85 @@
 
   <!-- PAGE HERO -->
   <div class="page-hero">
-    <h1>Travel Tips & Insights</h1>
+    <h1>Travel Tips &amp; Insights</h1>
     <p>Guides, stories, and tips from a community of flexible travelers around the world.</p>
   </div>
 
   <!-- BLOG CONTENT -->
   <div class="blog-page">
-    <div class="blog-grid">
-      <div class="blog-card">
-        <div class="blog-card-img blue">✈️</div>
-        <div class="blog-card-body">
-          <div class="blog-tag">Travel Tips</div>
-          <h3>What is an Onward Ticket and Why Do You Need One?</h3>
-          <p>Many countries require proof of onward travel before letting you board. Here's everything you need to know.</p>
-          <div class="blog-meta">June 10, 2024 · 5 min read</div>
-        </div>
+
+    <!-- FEATURED -->
+    <div class="blog-featured" onclick="openModal('post1')">
+      <div class="featured-img">✈️</div>
+      <div class="featured-body">
+        <div class="featured-tag">Featured · Travel Tips</div>
+        <h2>What is an Onward Ticket and Why Do You Need One?</h2>
+        <p>Many countries require proof of onward travel before letting you board your flight. Airlines and immigration officers can deny entry if you can't show where you're going next — even if you plan to stay long-term. Here's everything you need to know before your next trip.</p>
+        <div class="featured-meta">July 5, 2026 · 5 min read</div>
+        <span class="btn-dark" style="cursor:pointer">Read Article →</span>
       </div>
-      <div class="blog-card">
-        <div class="blog-card-img green">🌍</div>
+    </div>
+
+    <!-- GRID -->
+    <div class="blog-grid">
+      <div class="blog-card" onclick="openModal('post2')">
+        <div class="blog-card-img c1">🌍</div>
         <div class="blog-card-body">
           <div class="blog-tag">Visa Guide</div>
           <h3>Top 10 Countries That Require Proof of Onward Travel</h3>
           <p>From Thailand to Colombia — a complete list of countries that check for outbound flights at the border.</p>
-          <div class="blog-meta">May 28, 2024 · 7 min read</div>
+          <div class="blog-meta">June 20, 2026 · 7 min read</div>
+          <span class="read-more">Read more →</span>
         </div>
       </div>
-      <div class="blog-card">
-        <div class="blog-card-img orange">🎒</div>
+      <div class="blog-card" onclick="openModal('post3')">
+        <div class="blog-card-img c2">🎒</div>
         <div class="blog-card-body">
           <div class="blog-tag">Flexible Travel</div>
           <h3>How to Travel the World Without a Return Ticket</h3>
-          <p>A practical guide for digital nomads and long-term travelers who prefer to keep their plans open-ended.</p>
-          <div class="blog-meta">May 15, 2024 · 6 min read</div>
+          <p>A practical guide for digital nomads and long-term travelers who prefer open-ended plans.</p>
+          <div class="blog-meta">June 8, 2026 · 6 min read</div>
+          <span class="read-more">Read more →</span>
         </div>
       </div>
-      <div class="blog-card">
-        <div class="blog-card-img purple">🛂</div>
+      <div class="blog-card" onclick="openModal('post4')">
+        <div class="blog-card-img c3">🛂</div>
         <div class="blog-card-body">
           <div class="blog-tag">Border Control</div>
           <h3>What Happens If You Don't Have an Onward Ticket at Check-In?</h3>
           <p>Real stories from travelers who were denied boarding — and how they could have avoided it.</p>
-          <div class="blog-meta">April 30, 2024 · 4 min read</div>
+          <div class="blog-meta">May 25, 2026 · 4 min read</div>
+          <span class="read-more">Read more →</span>
         </div>
       </div>
-      <div class="blog-card">
-        <div class="blog-card-img red">💡</div>
+      <div class="blog-card" onclick="openModal('post5')">
+        <div class="blog-card-img c4">💡</div>
         <div class="blog-card-body">
           <div class="blog-tag">How It Works</div>
           <h3>What is a PNR and How Can You Verify It?</h3>
           <p>Understanding your Passenger Name Record — and why it's the key to a verifiable flight reservation.</p>
-          <div class="blog-meta">April 12, 2024 · 3 min read</div>
+          <div class="blog-meta">May 10, 2026 · 3 min read</div>
+          <span class="read-more">Read more →</span>
         </div>
       </div>
-      <div class="blog-card">
-        <div class="blog-card-img teal">🗺️</div>
+      <div class="blog-card" onclick="openModal('post6')">
+        <div class="blog-card-img c5">🗺️</div>
         <div class="blog-card-body">
           <div class="blog-tag">Destinations</div>
           <h3>Southeast Asia on a One-Way Ticket: A Traveler's Guide</h3>
           <p>How to explore Thailand, Vietnam, Bali and more without committing to a fixed return date.</p>
-          <div class="blog-meta">March 20, 2024 · 8 min read</div>
+          <div class="blog-meta">April 18, 2026 · 8 min read</div>
+          <span class="read-more">Read more →</span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- ===== MODALS ===== -->
+  <div class="overlay" id="overlay" onclick="closeModal(event)">
+    <div class="modal" id="modalBox">
+      <button class="modal-close" onclick="closeAll()">✕</button>
+      <div id="modalContent"></div>
     </div>
   </div>
 
@@ -176,10 +282,193 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© Copyright 2024, All Rights Reserved by GetOnwardTicket</p>
+      <p>© Copyright 2026, All Rights Reserved by GetOnwardTicket</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    const posts = {
+      post1: {
+        tag: "Travel Tips",
+        title: "What is an Onward Ticket and Why Do You Need One?",
+        meta: "July 5, 2026 · 5 min read",
+        body: `
+          <p>An onward ticket is proof that you have a confirmed flight leaving a country after you arrive. Airlines and immigration officers use it to verify that you don't intend to overstay your visa or remain in the country illegally.</p>
+          <h3>Why Do Airlines Ask for It?</h3>
+          <p>Airlines are legally responsible for passengers they bring into a country. If you're denied entry, the airline that flew you there has to fly you back at their own cost. So they check — before you even board — that you have a plan to leave.</p>
+          <p>This is especially common on routes to Southeast Asia, Latin America, and several island nations in the Caribbean and Pacific.</p>
+          <h3>Who Typically Needs an Onward Ticket?</h3>
+          <ul>
+            <li>Travelers entering on a tourist or visitor visa</li>
+            <li>Digital nomads who move between countries frequently</li>
+            <li>Anyone arriving without a pre-approved long-stay visa</li>
+            <li>Backpackers without a fixed return date</li>
+          </ul>
+          <h3>What Counts as Valid Proof?</h3>
+          <p>A confirmed flight reservation with a valid PNR (Passenger Name Record) is the standard accepted proof. It doesn't need to be a fully paid ticket — a reservation hold with a verifiable PNR is sufficient in most cases.</p>
+          <p>That's exactly what GetOnwardTicket provides: a real, verifiable reservation in your name, delivered in minutes, starting from just $14.</p>
+          <div class="modal-cta">
+            <p>Need a verifiable onward ticket before your next flight?</p>
+            <a href="index.html#book" class="btn-dark">Book your reservation from $14 →</a>
+          </div>
+        `
+      },
+      post2: {
+        tag: "Visa Guide",
+        title: "Top 10 Countries That Require Proof of Onward Travel",
+        meta: "June 20, 2026 · 7 min read",
+        body: `
+          <p>You've booked your flight, packed your bags, and you're ready to go — but did you check whether your destination requires an onward ticket? Here are the top 10 countries that enforce this rule and what you need to know.</p>
+          <h3>1. Thailand</h3>
+          <p>Thailand is one of the most strictly enforced. Border agents and check-in staff regularly ask for onward travel proof, especially at Bangkok's Suvarnabhumi Airport. Without it, you may be denied boarding.</p>
+          <h3>2. Indonesia (Bali)</h3>
+          <p>Bali sees millions of visitors on tourist visas. Immigration officers frequently check for return or onward tickets, particularly for travelers arriving from budget airlines.</p>
+          <h3>3. Philippines</h3>
+          <p>The Philippines Bureau of Immigration officially requires all foreign visitors to show proof of onward travel. Airlines serving Manila are known to enforce this at check-in.</p>
+          <h3>4. Colombia</h3>
+          <p>Colombia requires onward proof, especially for travelers arriving on one-way tickets. Medellin and Bogota airports are known checkpoints.</p>
+          <h3>5. Costa Rica</h3>
+          <p>Required by law. You must show an onward ticket to enter Costa Rica as a tourist.</p>
+          <h3>6. Peru</h3>
+          <p>Peru's immigration frequently checks for proof of departure, particularly at Lima's Jorge Chávez Airport.</p>
+          <h3>7. New Zealand</h3>
+          <p>New Zealand immigration requires travelers to show they have the means and intention to leave the country before their visa expires.</p>
+          <h3>8. United Kingdom</h3>
+          <p>UK border agents can and do ask for onward travel proof for visitors from certain countries, particularly if the purpose of visit seems unclear.</p>
+          <h3>9. USA</h3>
+          <p>While not always enforced for every traveler, CBP agents can request onward travel documentation, especially for visitors on the Visa Waiver Program.</p>
+          <h3>10. India</h3>
+          <p>India's e-Visa system and immigration officers have been known to request proof of onward or return travel, especially for backpackers and long-stay tourists.</p>
+          <div class="modal-cta">
+            <p>Traveling to any of these countries? Get your reservation in minutes.</p>
+            <a href="index.html#book" class="btn-dark">Book your reservation from $14 →</a>
+          </div>
+        `
+      },
+      post3: {
+        tag: "Flexible Travel",
+        title: "How to Travel the World Without a Return Ticket",
+        meta: "June 8, 2026 · 6 min read",
+        body: `
+          <p>More people than ever are choosing to travel without a fixed return date. Whether you're a digital nomad, a sabbatical traveler, or just someone who hates being locked into a schedule — here's how to do it smartly.</p>
+          <h3>The Problem With One-Way Tickets</h3>
+          <p>One-way tickets are a red flag at many borders. Airlines and immigration officers interpret them as a sign that you might overstay your visa. Even if your intentions are completely legitimate, you could be questioned, delayed, or denied boarding.</p>
+          <h3>The Smart Solution: A Reservation Hold</h3>
+          <p>Instead of buying an expensive return ticket you may never use, you can get a verifiable flight reservation — a real booking with a PNR in your name — that satisfies any immigration check. Services like GetOnwardTicket provide this for as little as $14, and the reservation is fully verifiable on the airline's website.</p>
+          <h3>Tips for Long-Term Travelers</h3>
+          <ul>
+            <li>Always have a flexible onward reservation before each border crossing</li>
+            <li>Use travel credit cards that don't charge foreign transaction fees</li>
+            <li>Keep digital and paper copies of all your travel documents</li>
+            <li>Research visa rules for each country at least 2 weeks before arriving</li>
+            <li>Have a backup plan — know the nearest embassy in each country you visit</li>
+          </ul>
+          <h3>Countries That Are Especially Flexible-Traveler Friendly</h3>
+          <p>Georgia, Mexico, Portugal, and Georgia offer long visa-free or visa-on-arrival stays with minimal documentation requirements, making them popular bases for digital nomads.</p>
+          <div class="modal-cta">
+            <p>Keep your travel flexible — get a verifiable onward reservation whenever you need one.</p>
+            <a href="index.html#book" class="btn-dark">Book your reservation from $14 →</a>
+          </div>
+        `
+      },
+      post4: {
+        tag: "Border Control",
+        title: "What Happens If You Don't Have an Onward Ticket at Check-In?",
+        meta: "May 25, 2026 · 4 min read",
+        body: `
+          <p>It happens more often than you'd think. A traveler arrives at the airport, confident and excited — and gets stopped at check-in because they can't show proof of onward travel. Here's what typically happens next.</p>
+          <h3>Scenario 1: Denied Boarding</h3>
+          <p>This is the most common outcome. The airline agent informs you that you cannot board without an onward ticket. You either miss your flight or scramble to buy an expensive last-minute ticket on the spot — often paying 3–10x the normal price.</p>
+          <h3>Scenario 2: Detained at Immigration</h3>
+          <p>Some travelers make it through check-in only to be held at immigration on arrival. This can result in hours of waiting, questioning, and in some cases — being sent back on the next available flight, at your own expense.</p>
+          <h3>Scenario 3: Voluntary Upgrade</h3>
+          <p>Some airlines will offer to sell you an onward ticket at the gate — but this is rare, expensive, and entirely at the airline's discretion.</p>
+          <h3>A Real Story</h3>
+          <p>"I was in Cartagena, Colombia checking in for my flight to Mexico. I didn't have proof of onward travel from Mexico and the agent flagged me. I found GetOnwardTicket on my phone, booked a reservation, and 10 minutes later I had a PDF in my inbox. I made my flight." — Alex S., Travel Blogger</p>
+          <h3>How to Avoid This Entirely</h3>
+          <p>The simplest fix is to always have a verifiable reservation ready before you travel. With GetOnwardTicket, you can get one in minutes for just $14 — far cheaper than any last-minute gate ticket.</p>
+          <div class="modal-cta">
+            <p>Don't risk missing your flight. Get your reservation now.</p>
+            <a href="index.html#book" class="btn-dark">Book your reservation from $14 →</a>
+          </div>
+        `
+      },
+      post5: {
+        tag: "How It Works",
+        title: "What is a PNR and How Can You Verify It?",
+        meta: "May 10, 2026 · 3 min read",
+        body: `
+          <p>If you've ever booked a flight, you've received a PNR — probably without knowing what it actually means or how powerful it is as a verification tool.</p>
+          <h3>What PNR Stands For</h3>
+          <p>PNR stands for Passenger Name Record. It's a unique 6-character code that identifies your booking within an airline's reservation system. Every confirmed flight reservation — whether you paid for a ticket or just placed a hold — has one.</p>
+          <h3>What Information a PNR Contains</h3>
+          <ul>
+            <li>Your full name (as it appears on your passport)</li>
+            <li>Flight number, date, and route</li>
+            <li>Booking status (confirmed, on hold, etc.)</li>
+            <li>Contact information used at booking</li>
+          </ul>
+          <h3>How to Verify a PNR</h3>
+          <p>You can verify any PNR directly on the airline's website. Go to the "Manage Booking" or "Check My Booking" section, enter the PNR and your last name, and the system will show the full reservation details.</p>
+          <p>Immigration officers and airline check-in staff do exactly this when they check your onward ticket. As long as the PNR is valid and the name matches your passport, it's accepted as proof of onward travel.</p>
+          <h3>Why GetOnwardTicket Uses Real PNRs</h3>
+          <p>Every reservation we provide is booked through accredited airline partners — which means you get a real, live PNR that verifies on the airline's own website. We never provide screenshots, PDFs that can't be checked, or altered documents.</p>
+          <div class="modal-cta">
+            <p>Get a real, verifiable PNR in your name within minutes.</p>
+            <a href="index.html#book" class="btn-dark">Book your reservation from $14 →</a>
+          </div>
+        `
+      },
+      post6: {
+        tag: "Destinations",
+        title: "Southeast Asia on a One-Way Ticket: A Traveler's Guide",
+        meta: "April 18, 2026 · 8 min read",
+        body: `
+          <p>Southeast Asia is one of the most popular regions for long-term, flexible travel. The food is incredible, the cost of living is low, and the visa policies are (mostly) generous. But traveling the region on a one-way ticket requires some preparation.</p>
+          <h3>Thailand: The Hub</h3>
+          <p>Bangkok is one of the best entry points into Southeast Asia. Thailand offers 30-day visa-free entry for most nationalities, but you <strong>will</strong> be asked for an onward ticket — either at check-in or at the border. Have a reservation ready.</p>
+          <h3>Vietnam: Easy Visa, Tight Enforcement</h3>
+          <p>Vietnam's e-visa system makes entry straightforward, but airlines flying into Hanoi and Ho Chi Minh City are strict about onward travel proof. Budget carriers like AirAsia and VietJet enforce this aggressively at check-in.</p>
+          <h3>Indonesia (Bali): The Dream Destination</h3>
+          <p>Bali's popularity means immigration is well-practiced at spotting potential overstays. A verifiable onward reservation is strongly recommended, especially if you're arriving from Australia or Singapore.</p>
+          <h3>Philippines: Legally Required</h3>
+          <p>The Philippines Bureau of Immigration officially mandates onward travel proof. No exceptions. If you don't have one, you may be denied boarding before you even land.</p>
+          <h3>Cambodia & Laos: More Relaxed</h3>
+          <p>These two countries tend to be more relaxed about onward travel, but it's still worth having a reservation handy — especially if you're doing a visa run or border crossing from Thailand.</p>
+          <h3>The Golden Rule</h3>
+          <p>Always have a valid onward reservation before each leg of your journey. It takes 10 minutes and $14 with GetOnwardTicket, and it removes the single biggest stress point of flexible travel in Southeast Asia.</p>
+          <div class="modal-cta">
+            <p>Planning a Southeast Asia trip? Get your first reservation now.</p>
+            <a href="index.html#book" class="btn-dark">Book your reservation from $14 →</a>
+          </div>
+        `
+      }
+    };
+
+    function openModal(id) {
+      const post = posts[id];
+      if (!post) return;
+      document.getElementById('modalContent').innerHTML = `
+        <div class="modal-tag">${post.tag}</div>
+        <h2>${post.title}</h2>
+        <div class="modal-meta">${post.meta}</div>
+        <div class="modal-body">${post.body}</div>
+      `;
+      document.getElementById('overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAll() {
+      document.getElementById('overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function closeModal(e) {
+      if (e.target === document.getElementById('overlay')) closeAll();
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAll(); });
+  </script>
 </body>
 </html>
